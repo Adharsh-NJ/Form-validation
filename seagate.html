@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./seagate.css" />
+</head>
+
+<body>
+    <header>
+
+        <div class="header-container">
+            <img class="header-container__logo" src="./images/b1cf5596-9c36-4824-bfce-3d55c32bfa6f.png" alt="logo">
+            <i class="fa fa-search header-container__search-icon" aria-hidden="true" id="search"></i>
+        </div>
+
+    </header>
+
+    <div id="search-container" class="show-search hide-search">
+        <input type="text" class="search-container__search-bar" placeholder="what's you are looking for?"></input>
+    </div>
+
+    <div class="talk-to-expert">
+        <div class="talk-to-expert__content-container">
+            <div class="talk-to-expert__info">
+                <h3 class="talk-to-expert__info__subject">Talk to a Lyve Cloud Expert</h3>
+                <h1 class="talk-to-expert__info__heading">We Can Help Your Business</h2>
+                    <p class="talk-to-expert__info__para">Lyve Cloud is your simple, trusted and secure storage as a
+                        service. Put your data to work with
+                        high availability, cost predictability and cloud flexibility. Talk to a Lyve Cloud expert today
+                    </p>
+            </div>
+
+            <div class="talk-to-expert__form-container">
+                <form action="" id="details-form" class="form-container__details-form" autocomplete="nope">
+                    <h1>Get Started</h1>
+                    <select name="inquiryPurpose" id="inquiry-purpose" required>
+                        <option value="">Purpose of inquiry*</option>
+                        <option>resale of products</option>
+                        <option>Build a solution for client</option>
+                        <option>Buy for my own company use</option>
+                        <option>support</option>
+                    </select>
+                    <input type="text" placeholder="First Name*" id="first-name-input" autocomplete="off"
+                        required></input>
+                    <input type="text" placeholder="last Name*" id="last-name-input" required></input>
+                    <input type="email" placeholder="Company Email Address*" id="company-email-input" required></input>
+                    <input type="text" placeholder="Company Name*" id="company-name-input" required></input>
+                    <select name="role" id="role" required>
+                        <option value="">Which best describe your role*</option>
+                        <option>Business owner</option>
+                        <option>system Admin</option>
+                    </select>
+                    <input type="number" placeholder="Phone Number*" id="phone-number-input" required></input>
+                    <select name="Purpose" id="purchase-plan-select" required>
+                        <option value="">intended purchase timeline*</option>
+                        <option>this month </option>
+                        <option>next month</option>
+                    </select>
+                    <select name="country" id="country-select" required>
+                        <option selected value="">Country*</option>
+                    </select>
+                    <textarea placeholder="Additional details" id="additional-details"></textarea>
+                    <label><input type="checkbox" name="newsLetter" id="newsLetter" required>
+                        I would like to receive communications about Seagate news, offers, products and promotions.
+                    </label>
+                    <label><input type="checkbox" name="newsLetter" id="company-policy" required>
+                        I have read and agree to Seagate's Privacy Statement. I understand I may withdraw my permission
+                        at any time by contacting data.protection.officer@seagate.com.*
+                    </label>
+                    <input type="submit" value="Get Started" class="button--submit" id="submit-button"></input>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="details-container">
+        <div class="start-container">
+            <h1 class="start-container__heading">Your Cloud, Your Way</h1>
+            <p class="start-container__para">Introducing a new approach to cloud storage. Lyve™ Cloud from Seagate® is
+                your simple, trusted and
+                efficient storage as a service.</p>
+            <button id="get-started-button" class="button--get-started">Get Started <i class="fa fa-arrow-right"
+                    aria-hidden="true"></i></button>
+        </div>
+
+        <div class="details">
+            <div class="details-card">
+                <h1 class="details-card__heading">Storage Without Surprises</h1>
+                <p class="details-card__para">Lyve Cloud’s simple pricing structure eliminates bill anxiety while its
+                    intuitive, user-friendly
+                    dashboard provides long-term visibility into data storage costs.</p>
+            </div>
+
+            <div class="details-card">
+                <h1 class="details-card__heading"> Stringent Security Standards</h1>
+                <p class="details-card__para">Immutable object storage protects data from attacks, corruption, or
+                    deletion while multi-zone
+                    replication assures that data is available when needed.</p>
+            </div>
+
+            <div class="details-card">
+                <h1 class="details-card__heading">Faster Time to Value</h1>
+                <p class="details-card__para">Multi-exabyte scalability enables businesses to store more for longer
+                    while our collaboration with
+                    Equinix provides a choice of compute for S3 workloads.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="./data.js"></script>
+    <script src="./seagate.js"></script>
+</body>
+
+</html>
