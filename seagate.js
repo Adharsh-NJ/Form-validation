@@ -3,7 +3,7 @@ let searchContainer = document.querySelector("#search-container");
 let additionalDetails = document.querySelector("#additional-details");
 let form = document.querySelector("#details-form");
 let submitButton = document.querySelector("#submit-button");
-let validation = {
+let fields = {
     purpose: {
         element: document.querySelector("#inquiry-purpose"),
         pattern() {
@@ -84,6 +84,12 @@ let validation = {
             return this.element.checked
         },
         isValid: false
+    },
+    additionalDetails: { 
+        element: document.querySelector("#additional-details") ,
+        pattern(){
+            return true
+        }
     }
 }
 
@@ -97,33 +103,33 @@ countries.map((value) => {
     let option = document.createElement("option");
     let optionName = document.createTextNode(value.name);
     option.appendChild(optionName);
-    validation.country.element.appendChild(option);
+    fields.country.element.appendChild(option);
 })
 
 //validation
-validation.phoneNumber.element.addEventListener("keypress", (e) => {
+fields.phoneNumber.element.addEventListener("keypress", (e) => {
     if (["e", "E", "+", "-"].includes(e.key)) {
         e.preventDefault()
     }
 })
 
-for (let key in validation) {
-    validation[key].element.addEventListener("input", () => {
-        validation[key].isValid = validation[key].pattern();
-        showError(validation[key].element, validation[key].isValid, validation[key]?.message)
+for (let key in fields) {
+    fields[key].element.addEventListener("input", () => {
+        fields[key].isValid = fields[key].pattern();
+        showError(fields[key].element, fields[key].isValid, fields[key]?.message)
     })
 }
 
 //handle submit
 form.addEventListener("submit", (e) => {
     e.preventDefault()
-    Object.values(validation).filter(value => !value.isValid).length === 0 ?
-        onSubmit() : showError("submit");
+    Object.values(fields).filter(value => !value.isValid).length === 0 ?
+        onSubmit() : showError();
 })
 
 submitButton.addEventListener("click", () => {
     //to show all invalid fields red on submit 
-    Object.values(validation).map((value) => {
+    Object.values(fields).map((value) => {
         if (!value.isValid) {
             value.element.classList.add("error");
         }
@@ -144,14 +150,12 @@ function showError(elem, status, message) {
 
 //handling submit
 function onSubmit() {
-    let data = {
-        additionalDetails: additionalDetails.value
-    }
-    Object.entries(validation).map(value => {
+    let formData = {}
+    Object.entries(fields).map(value => {
         let key = value[0];
-        data[key] = value[1].element.value;
+        formData[key] = value[1].element.value;
     })
-    console.log(data);
+    console.log(formData);
 }
 
 
