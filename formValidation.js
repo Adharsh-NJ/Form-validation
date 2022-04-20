@@ -89,7 +89,8 @@ let fields = {
         element: document.querySelector("#additional-details") ,
         pattern(){
             return true
-        }
+        },
+        isValid:true
     }
 }
 
@@ -112,7 +113,6 @@ fields.phoneNumber.element.addEventListener("keypress", (e) => {
         e.preventDefault()
     }
 })
-
 for (let key in fields) {
     fields[key].element.addEventListener("input", () => {
         fields[key].isValid = fields[key].pattern();
